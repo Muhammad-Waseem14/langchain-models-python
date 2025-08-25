@@ -14,6 +14,7 @@ messages = [
 ]
 
 
-result = model.invoke(messages)
+# result = model.invoke(messages)
 
-print(result.content)
+for token in model.stream(messages):
+    print(token.content, end="\n")
